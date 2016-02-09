@@ -1,0 +1,130 @@
+{
+  id: 'f9ca58d35c',
+  name: 'List Test 1',
+  contact: {
+    company: 'AG',
+    address1: '37 Bennett Road',
+    address2: '',
+    city: 'Sydney',
+    state: 'Nsw',
+    zip: '2000',
+    country: 'US',
+    phone: ''
+  },
+  permission_reminder: '',
+  use_archive_bar: true,
+  campaign_defaults: {
+    from_name: 'Andrew Grant',
+    from_email: 'andrewgrant@hotmail.com',
+    subject: '',
+    language: 'en'
+  },
+  notify_on_subscribe: '',
+  notify_on_unsubscribe: '',
+  date_created: '2015-03-17T02:19:15+00:00',
+  list_rating: 0,
+  email_type_option: false,
+  subscribe_url_short: 'http://eepurl.com/bg9_wj',
+  subscribe_url_long: 'http://andrewgrant.us10.list-manage.com/subscribe?u=1b6782d5d947883cf993dddef&id=f9ca58d35c',
+  beamer_address: 'us10-86c8cd1dfa-2c2979f913@inbound.mailchimp.com',
+  visibility: 'pub',
+  modules: [],
+  stats: {
+    member_count: 6,
+    unsubscribe_count: 0,
+    cleaned_count: 0,
+    member_count_since_send: 13,
+    unsubscribe_count_since_send: 0,
+    cleaned_count_since_send: 0,
+    campaign_count: 1,
+    campaign_last_sent: '',
+    merge_field_count: 2,
+    avg_sub_rate: 0,
+    avg_unsub_rate: 0,
+    target_sub_rate: 0,
+    open_rate: 0,
+    click_rate: 0,
+    last_sub_date: '2015-03-18T23:28:51+00:00',
+    last_unsub_date: ''
+  },
+  _links: [
+    {
+      rel: 'self',
+      href: 'https://us10.api.mailchimp.com/3.0/lists/f9ca58d35c',
+      method: 'GET',
+      targetSchema: 'https://us10.api.mailchimp.com/schema/3.0/Lists/Instance.json'
+    },
+    {
+      rel: 'parent',
+      href: 'https://us10.api.mailchimp.com/3.0/lists',
+      method: 'GET',
+      targetSchema: 'https://us10.api.mailchimp.com/schema/3.0/Lists/Collection.json',
+      schema: 'https://us10.api.mailchimp.com/schema/3.0/CollectionLinks/Lists.json'
+    },
+    {
+      rel: 'update',
+      href: 'https://us10.api.mailchimp.com/3.0/lists/f9ca58d35c',
+      method: 'PATCH',
+      schema: 'https://us10.api.mailchimp.com/schema/3.0/Lists/Instance.json'
+    },
+    {
+      rel: 'delete',
+      href: 'https://us10.api.mailchimp.com/3.0/lists/f9ca58d35c',
+      method: 'DELETE'
+    },
+    {
+      rel: 'abuse-reports',
+      href: 'https://us10.api.mailchimp.com/3.0/lists/f9ca58d35c/abuse-reports',
+      method: 'GET',
+      targetSchema: 'https://us10.api.mailchimp.com/schema/3.0/Lists/Abuse/Collection.json',
+      schema: 'https://us10.api.mailchimp.com/schema/3.0/CollectionLinks/Lists/Abuse.json'
+    },
+    {
+      rel: 'activity',
+      href: 'https://us10.api.mailchimp.com/3.0/lists/f9ca58d35c/activity',
+      method: 'GET',
+      targetSchema: 'https://us10.api.mailchimp.com/schema/3.0/Lists/Activity/Collection.json'
+    },
+    {
+      rel: 'clients',
+      href: 'https://us10.api.mailchimp.com/3.0/lists/f9ca58d35c/clients',
+      method: 'GET',
+      targetSchema: 'https://us10.api.mailchimp.com/schema/3.0/Lists/Clients/Collection.json'
+    },
+    {
+      rel: 'growth-history',
+      href: 'https://us10.api.mailchimp.com/3.0/lists/f9ca58d35c/growth-history',
+      method: 'GET',
+      targetSchema: 'https://us10.api.mailchimp.com/schema/3.0/Lists/Growth/Collection.json',
+      schema: 'https://us10.api.mailchimp.com/schema/3.0/CollectionLinks/Lists/Growth.json'
+    },
+    {
+      rel: 'interest-categories',
+      href: 'https://us10.api.mailchimp.com/3.0/lists/f9ca58d35c/interest-categories',
+      method: 'GET',
+      targetSchema: 'https://us10.api.mailchimp.com/schema/3.0/Lists/InterestCategories/Collection.json',
+      schema: 'https://us10.api.mailchimp.com/schema/3.0/CollectionLinks/Lists/InterestCategories.json'
+    },
+    {
+      rel: 'members',
+      href: 'https://us10.api.mailchimp.com/3.0/lists/f9ca58d35c/members',
+      method: 'GET',
+      targetSchema: 'https://us10.api.mailchimp.com/schema/3.0/Lists/Members/Collection.json',
+      schema: 'https://us10.api.mailchimp.com/schema/3.0/CollectionLinks/Lists/Members.json'
+    },
+    {
+      rel: 'merge-fields',
+      href: 'https://us10.api.mailchimp.com/3.0/lists/f9ca58d35c/merge-fields',
+      method: 'GET',
+      targetSchema: 'https://us10.api.mailchimp.com/schema/3.0/Lists/MergeFields/Collection.json',
+      schema: 'https://us10.api.mailchimp.com/schema/3.0/CollectionLinks/Lists/MergeFields.json'
+    },
+    {
+      rel: 'segments',
+      href: 'https://us10.api.mailchimp.com/3.0/lists/f9ca58d35c/segments',
+      method: 'GET',
+      targetSchema: 'https://us10.api.mailchimp.com/schema/3.0/Lists/Segments/Collection.json',
+      schema: 'https://us10.api.mailchimp.com/schema/3.0/CollectionLinks/Lists/Segments.json'
+    }
+  ]
+}
