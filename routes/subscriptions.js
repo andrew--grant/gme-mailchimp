@@ -29,7 +29,7 @@ router.get('/winner', function (req, res, next) {
 router.post('/subscribe', function (req, res, next) {
 
     // CORS Headers (client > gme app, not gme >  mailchimp)
-    // todo: SECURE THIS ON PRODUCTION
+    // todo: SECURE THIS ON PRODUCTION, no forgetty!!!
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
