@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var Mailchimp = require('mailchimp-api-v3');
-var apiKey = 'e3e446cfa981120859f63bef031cc0ec-us10';
-var listId = 'ee321b4c68';
+var apiKey = 'd497aacaafd66952fd2121fb8799cee4-us9'; // 'e3e446cfa981120859f63bef031cc0ec-us10';
+var listId = '5a388fe274'; //'ee321b4c68';
 var mailchimp = new Mailchimp(apiKey);
 var request = require('request');
 
