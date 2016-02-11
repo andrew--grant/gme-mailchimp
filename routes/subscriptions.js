@@ -82,25 +82,20 @@ router.post('/subscribe', function (req, res, next) {
                     // mailchimp error code as per:
                     // http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/
                     if (mailchimpResponse.status >= 400) {
-                        res.send({status: 'failed', reason: 'bad status code: ' + response.statusCode});
-                        console.log('debug: mailchimpResponse.status ' + mailchimpResponse.status);
+                        res.send({status: 'failed', reason: 'mailchimp generic error: ' + response.statusCode});
                     } else {
                         var emailExists = (mailchimpResponse.title == 'Member Exists');
                         if (!emailExists) {
                             res.send({status: 'success'});
-                            console.log('user now in comp!');
                         } else {
                             // do this when email already in
                             // mailchimp subscription list
-                            res.send({status: 'email exists'});
-                            console.log('Member Exists logic not yet implemented');
+                            res.send({status: 'email already subscribed'});
                         }
                     }
                 }
             } else {
                 res.send({status: 'failed', reason: error});
-                console.log('failed: ' + error);
-                console.log(error);
             }
         }
     );
