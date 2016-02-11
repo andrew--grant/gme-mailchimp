@@ -42,11 +42,11 @@ router.post('/subscribe', function (req, res, next) {
         'merge_fields': {
             'FNAME': req.body.firstName,
             'LNAME': req.body.lastName,
-            'MMERGE4': req.body.mobile.replace(' ',''),
+            'MMERGE4': req.body.mobile.replace(' ', ''),
             'MMERGE3': req.body.eventName,
-            'MMERGE5':req.body.answer,
-            'MMERGE6':req.body.eventSource,
-            'MMERGE7':req.body.eventFacilitator
+            'MMERGE5': req.body.answer,
+            'MMERGE6': req.body.eventSource,
+            'MMERGE7': req.body.eventFacilitator
         }
     });
 
@@ -73,19 +73,20 @@ router.post('/subscribe', function (req, res, next) {
 
 
                     if (mailchimpResponse.status >= 400) {
-                        res.send({status: 'failed', reason: 'mailchimp generic error: ' + response.statusCode});
-                    } else {
-                        var emailExists = (mailchimpResponse.title == 'Member Exists');
-                        if (!emailExists) {
-                            res.send({status: 'success'});
-                        } else {
+
+                        if (mailchimpResponse.status == 400 && mailchimpResponse.title == 'Member Exists') {
+                            // email exists
                             // do this when email already exists
                             res.send({status: 'email already subscribed - hash is: ' + mailchimpResponse.id});
 
-
-
-
+                        } else {
+                            // generic error
+                            res.send({status: 'failed', reason: 'mailchimp generic error: ' + response.statusCode});
                         }
+
+                    } else {
+                        // s'all goooood hombre
+                        res.send({status: 'success'});
                     }
                 }
             } else {
