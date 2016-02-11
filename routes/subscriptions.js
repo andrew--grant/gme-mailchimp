@@ -19,6 +19,7 @@ router.get('/', function (req, res, next) {
             res.json(result);
         }
     })
+
 });
 
 // GET subscriptions/winner
@@ -34,7 +35,6 @@ router.post('/subscribe', function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
-    // todo: add in body params
 
     var body = JSON.stringify({
         'email_address': req.body.email,
@@ -49,14 +49,6 @@ router.post('/subscribe', function (req, res, next) {
             'MMERGE7':req.body.eventFacilitator
         }
     });
-
-    console.log('req.body');
-    console.log(req.body);
-    console.log('');
-
-    console.log('request body');
-    console.log(body);
-    console.log('');
 
     request(
         {
@@ -79,8 +71,7 @@ router.post('/subscribe', function (req, res, next) {
                     console.log(mailchimpResponse);
                     console.log('');
 
-                    // mailchimp error code as per:
-                    // http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/
+
                     if (mailchimpResponse.status >= 400) {
                         res.send({status: 'failed', reason: 'mailchimp generic error: ' + response.statusCode});
                     } else {
@@ -88,9 +79,12 @@ router.post('/subscribe', function (req, res, next) {
                         if (!emailExists) {
                             res.send({status: 'success'});
                         } else {
-                            // do this when email already in
-                            // mailchimp subscription list
-                            res.send({status: 'email already subscribed'});
+                            // do this when email already exists
+                            res.send({status: 'email already subscribed - hash is: ' + mailchimpResponse.id});
+
+
+
+
                         }
                     }
                 }
