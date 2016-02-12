@@ -1,14 +1,16 @@
 var express = require('express');
 var router = express.Router();
 var Mailchimp = require('mailchimp-api-v3');
-var mailchimpUrl = 'http://us9.api.mailchimp.com'; //'http://us10.api.mailchimp.com';
-var apiKey = 'd497aacaafd66952fd2121fb8799cee4-us9'; // 'e3e446cfa981120859f63bef031cc0ec-us10';
-var listId = '5a388fe274'; //'ee321b4c68';
+var mailchimpUrl = 'http://us10.api.mailchimp.com';//  'http://us9.api.mailchimp.com';
+var apiKey = 'e3e446cfa981120859f63bef031cc0ec-us10'; // 'd497aacaafd66952fd2121fb8799cee4-us9';
+var listId = 'ee321b4c68'; // '5a388fe274';
 var mailchimp = new Mailchimp(apiKey);
 var request = require('request');
 
 // GET subscriptions.
 router.get('/', function (req, res, next) {
+
+    //todo: remove this and all usage of mailchimp, test.
 
     mailchimp.get({
         path: '/lists/' + listId
@@ -37,7 +39,7 @@ router.post('/subscribe', function (req, res, next) {
 
 
     var body = JSON.stringify({
-        'email_address': req.body.email,
+        'email_address': req.body.email.toLowerCase(),
         'status': 'subscribed',
         'merge_fields': {
             'FNAME': req.body.firstName,
@@ -67,17 +69,43 @@ router.post('/subscribe', function (req, res, next) {
                     console.log("response.statusCode: " + response.statusCode);
                 } else {
                     var mailchimpResponse = JSON.parse(body);
-                    console.log('---------- Mailchimp Response ------------');
-                    console.log(mailchimpResponse);
-                    console.log('');
-
 
                     if (mailchimpResponse.status >= 400) {
 
                         if (mailchimpResponse.status == 400 && mailchimpResponse.title == 'Member Exists') {
-                            // email exists
-                            // do this when email already exists
-                            res.send({status: 'email already subscribed - hash is: ' + mailchimpResponse.id});
+                            // email exists logic
+                            var md5 = require('blueimp-md5');
+                            var subscriberHash = md5(req.body.email.toLowerCase());
+
+                            var body = JSON.stringify({
+                                'merge_fields': {
+                                    'MMERGE5': req.body.answer
+                                }
+                            });
+
+                            request(
+                                {
+                                    method: 'PATCH',
+                                    url: mailchimpUrl + '/3.0/lists/' + listId + '/members/' + subscriberHash,
+                                    headers: {
+                                        'Authorization': 'apikey ' + apiKey,
+                                    },
+                                    body: body
+                                }, function (error, response, body) {
+                                    if (!error) {
+                                        console.log('patch response body');
+                                        console.log(body);
+                                        // s'all goooood hombre
+                                        res.send({status: 'success'});
+                                    } else {
+                                        console.log('debug: ' + 'error when trying to update existing email record');
+                                        res.send({
+                                            status: 'failed',
+                                            reason: 'error when trying to update existing email record'
+                                        });
+                                    }
+                                });
+
 
                         } else {
                             // generic error
@@ -95,5 +123,10 @@ router.post('/subscribe', function (req, res, next) {
         }
     );
 });
+
+
+var myArray = new sdfsdfsd
+
+
 
 module.exports = router;
