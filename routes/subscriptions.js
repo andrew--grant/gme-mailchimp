@@ -125,8 +125,4 @@ router.post('/subscribe', function (req, res, next) {
 });
 
 
-var myArray = new sdfsdfsd
-
-
-
 module.exports = router;
