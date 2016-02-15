@@ -10,33 +10,32 @@ var request = require('request');
 // GET subscriptions.
 router.get('/', function (req, res, next) {
 
-    //todo: remove this and all usage of mailchimp, test.
+    //mailchimp.get({
+    //    path: '/lists/' + listId
+    //}, function (err, result) {
+    //    if (err) {
+    //        res.json('error');
+    //    } else {
+    //        res.json(result);
+    //    }
+    //})
 
-    mailchimp.get({
-        path: '/lists/' + listId
-    }, function (err, result) {
-        if (err) {
-            res.json('error');
-        } else {
-            res.json(result);
-        }
-    })
+    res.json({api_status: 'ok'});
 
 });
 
 // GET subscriptions/winner
 router.get('/winner', function (req, res, next) {
-    res.send('no yet implemented');
+    res.send('not yet implemented');
 });
 
 // GET subscriptions/subscribe
 router.post('/subscribe', function (req, res, next) {
 
     // CORS Headers (client > gme app, not gme >  mailchimp)
-    // todo: SECURE THIS ON PRODUCTION, no forgetty!!!
+    // todo: SECURE THIS ON PRODUCTION!
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-
 
     var body = JSON.stringify({
         'email_address': req.body.email.toLowerCase(),
@@ -44,11 +43,12 @@ router.post('/subscribe', function (req, res, next) {
         'merge_fields': {
             'FNAME': req.body.firstName,
             'LNAME': req.body.lastName,
-            'MMERGE4': req.body.mobile.replace(' ', ''),
+            'MMERGE4': req.body.mobile.replace(/\s/g, '').replace(/\-/g, ''),
             'MMERGE3': req.body.eventName,
             'MMERGE5': req.body.answer,
             'MMERGE6': req.body.eventSource,
-            'MMERGE7': req.body.eventFacilitator
+            'MMERGE7': req.body.eventFacilitator,
+            'MMERGE9': req.body.businessUnit
         }
     });
 
@@ -66,20 +66,25 @@ router.post('/subscribe', function (req, res, next) {
                 if (response.statusCode > 400) {
                     // http level problem - didn't connect through to mailchimp
                     res.send({status: 'failed', reason: 'bad status code: ' + response.statusCode});
-                    console.log("response.statusCode: " + response.statusCode);
                 } else {
                     var mailchimpResponse = JSON.parse(body);
 
                     if (mailchimpResponse.status >= 400) {
 
+                        // In these cases we do not get back the current member
+                        // data - just an 'existing member' message
+
+                        // Does this member/email already exist in mailchimp?
                         if (mailchimpResponse.status == 400 && mailchimpResponse.title == 'Member Exists') {
-                            // email exists logic
+                            // update the answer
+
                             var md5 = require('blueimp-md5');
                             var subscriberHash = md5(req.body.email.toLowerCase());
 
                             var body = JSON.stringify({
                                 'merge_fields': {
-                                    'MMERGE5': req.body.answer
+                                    'MMERGE5': req.body.answer,
+                                    'MMERGE3': req.body.eventName
                                 }
                             });
 
@@ -93,19 +98,15 @@ router.post('/subscribe', function (req, res, next) {
                                     body: body
                                 }, function (error, response, body) {
                                     if (!error) {
-                                        console.log('patch response body');
-                                        console.log(body);
                                         // s'all goooood hombre
                                         res.send({status: 'success'});
                                     } else {
-                                        console.log('debug: ' + 'error when trying to update existing email record');
                                         res.send({
                                             status: 'failed',
                                             reason: 'error when trying to update existing email record'
                                         });
                                     }
                                 });
-
 
                         } else {
                             // generic error
@@ -123,6 +124,5 @@ router.post('/subscribe', function (req, res, next) {
         }
     );
 });
-
 
 module.exports = router;
