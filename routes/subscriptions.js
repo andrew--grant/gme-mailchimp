@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var Mailchimp = require('mailchimp-api-v3');
-var mailchimpUrl = 'http://us9.api.mailchimp.com';//'http://us10.api.mailchimp.com';
-var apiKey = 'd497aacaafd66952fd2121fb8799cee4-us9'; // 'e3e446cfa981120859f63bef031cc0ec-us10';
-var listId = '5a388fe274';// 'ee321b4c68';
+var mailchimpUrl = 'http://us9.api.mailchimp.com';
+var apiKey = process.env['mailchimp-api-key'];
+var listId = '5a388fe274';
 var mailchimp = new Mailchimp(apiKey);
 var request = require('request');
 
@@ -20,8 +20,7 @@ router.get('/', function (req, res, next) {
     //    }
     //})
 
-    var key = process.env['mailchimp-api-key'];
-    res.json({api_status: 'ok', key:key});
+     res.json({api_status: 'ok'});
 
 });
 
