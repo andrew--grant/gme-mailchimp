@@ -20,7 +20,8 @@ router.get('/', function (req, res, next) {
     //    }
     //})
 
-    res.json({api_status: 'ok'});
+    var key = process.env['mailchimp-api-key'];
+    res.json({api_status: 'ok', key:key});
 
 });
 
