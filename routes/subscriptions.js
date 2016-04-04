@@ -3,7 +3,7 @@ var router = express.Router();
 var Mailchimp = require('mailchimp-api-v3');
 var mailchimpUrl = 'http://us9.api.mailchimp.com';
 var apiKey = process.env['mailchimp-api-key'];
-var listId = '5a388fe274';
+var listId = 'f37f9feb84';
 var mailchimp = new Mailchimp(apiKey);
 var request = require('request');
 
