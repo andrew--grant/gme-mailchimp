@@ -3,24 +3,14 @@ var router = express.Router();
 var Mailchimp = require('mailchimp-api-v3');
 var mailchimpUrl = 'http://us9.api.mailchimp.com';
 var apiKey = process.env['mailchimp-api-key'];
-var listId = 'f37f9feb84';
+//var listId = 'f37f9feb84';
 var mailchimp = new Mailchimp(apiKey);
 var request = require('request');
 
 // GET subscriptions.
 router.get('/', function (req, res, next) {
 
-    //mailchimp.get({
-    //    path: '/lists/' + listId
-    //}, function (err, result) {
-    //    if (err) {
-    //        res.json('error');
-    //    } else {
-    //        res.json(result);
-    //    }
-    //})
-
-     res.json({api_status: 'ok'});
+    res.json({api_status: 'ok'});
 
 });
 
@@ -36,7 +26,7 @@ router.post('/subscribe', function (req, res, next) {
     // todo: SECURE THIS ON PRODUCTION!
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-
+    var listId = req.body.listId;
     var body = JSON.stringify({
         'email_address': req.body.email.toLowerCase(),
         'status': 'subscribed',
