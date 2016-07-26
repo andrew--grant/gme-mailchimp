@@ -39,7 +39,8 @@ router.post('/subscribe', function (req, res, next) {
             'MMERGE6': req.body.eventSource,
             'MMERGE7': req.body.eventFacilitator,
             'MMERGE8': req.body.state,
-            'MMERGE9': req.body.businessUnit
+            'MMERGE9': req.body.businessUnit,
+            'MMERGE10':req.body.isSubscribed
         }
     });
 
