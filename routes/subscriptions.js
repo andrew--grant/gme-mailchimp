@@ -19,7 +19,12 @@ router.get('/winner', function (req, res, next) {
     res.send('not yet implemented');
 });
 
-// GET subscriptions/subscribe
+// POST subscriptions/saveTheDateRegister
+router.get('/saveTheDateRegister', function (req, res, next) {
+    res.send('not yet implemented');
+});
+
+// POST subscriptions/subscribe
 router.post('/subscribe', function (req, res, next) {
 
     // CORS Headers (client > gme app, not gme >  mailchimp)
