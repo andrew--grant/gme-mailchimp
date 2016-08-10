@@ -28,7 +28,7 @@ router.post('/savethedateregister', function (req, res, next) {
     var out = '--- ';
     for (var prop in req.body) {
         //if (obj.hasOwnProperty(prop)) {
-        out += "obj." + prop + " = " + obj[prop];
+        out += "obj." + prop + " = " + req.body[prop];
         //}
     }
     out += ' ---';
