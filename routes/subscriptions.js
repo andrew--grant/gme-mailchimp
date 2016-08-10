@@ -19,7 +19,7 @@ router.get('/winner', function (req, res, next) {
     res.send('not yet implemented');
 });
 
-// POST subscriptions/saveTheDateRegister
+// POST subscriptions/savethedateregister
 router.post('/savethedateregister', function (req, res, next) {
     // CORS Headers (client > gme app, not gme >  mailchimp)
     // todo: SECURE THIS ON PRODUCTION!
@@ -27,7 +27,7 @@ router.post('/savethedateregister', function (req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
     var testData = req.body.company;
-    res.send('savethedateregister. company = ' + testData);
+    res.send('savethedateregister. company = ' + req.body);
 });
 
 // POST subscriptions/subscribe
