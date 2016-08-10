@@ -27,7 +27,7 @@ router.post('/savethedateregister', function (req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
     var testData = req.body.company;
-    res.send('savethedateregister. company = ' + req.body);
+    res.send('savethedateregister. company = ' + req.body.company);
 });
 
 // POST subscriptions/subscribe
