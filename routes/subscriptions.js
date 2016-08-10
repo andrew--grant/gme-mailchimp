@@ -27,11 +27,11 @@ router.post('/savethedateregister', function (req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     var out = '--- ';
     for (var prop in req.body) {
-        if (obj.hasOwnProperty(prop)) {
-        out += "obj." + prop + " = " + req.body[prop];
-        }
+        //if (obj.hasOwnProperty(prop)) {
+            out += "obj." + prop + " = " + req.body[prop];
+        //}
     }
-    out += ' ---'; 
+    out += ' ---';
     res.send('savethedateregister body = ' + out);
 });
 
