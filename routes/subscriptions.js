@@ -25,9 +25,14 @@ router.post('/savethedateregister', function (req, res, next) {
     // todo: SECURE THIS ON PRODUCTION!
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-
+    var out = '';
+    for (var prop in req.body) {
+        if (obj.hasOwnProperty(prop)) {
+            out += "obj." + prop + " = " + obj[prop];
+        }
+    }
     var testData = req.body.company;
-    res.send('savethedateregister. data = ' + req.body);
+    res.send('savethedateregister body = ' + out);
 });
 
 // POST subscriptions/subscribe
