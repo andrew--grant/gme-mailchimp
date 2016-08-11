@@ -19,6 +19,13 @@ router.get('/winner', function (req, res, next) {
     res.send('not yet implemented');
 });
 
+// POST subscriptions/xrconnectregister
+router.post('/xrconnectregister', function (req, res, next) {
+    res.send({ status: 'ok', message: 'nothing much going on here right now' });
+
+});
+
+
 // POST subscriptions/savethedateregister
 router.post('/savethedateregister', function (req, res, next) {
 
