@@ -21,18 +21,48 @@ router.get('/winner', function (req, res, next) {
 
 // POST subscriptions/savethedateregister
 router.post('/savethedateregister', function (req, res, next) {
+
     // CORS Headers (client > gme app, not gme >  mailchimp)
     // todo: SECURE THIS ON PRODUCTION!
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    var out = '--- ';
-    for (var prop in req.body) {
-        //if (obj.hasOwnProperty(prop)) {
-        out += "obj." + prop + " = " + req.body[prop];
-        //}
-    }
-    out += ' ---';
-    res.send('out = ' + out);
+    var listId = req.body.listId;
+    var body = JSON.stringify({
+        'email_address': req.body.email.toLowerCase(),
+        'status': 'subscribed',
+        'merge_fields': {
+            'FNAME': req.body.firstName,
+            'LNAME': req.body.lastName,
+            'MMERGE4': req.body.numberOfGuests || 1,
+            'MMERGE3': req.body.companyName,
+            'MMERGE5': req.body.eventAttending
+        }
+    });
+
+    request(
+        {
+            method: 'POST',
+            url: mailchimpUrl + '/3.0/lists/' + listId + '/members/',
+            headers: {
+                'Authorization': 'apikey ' + apiKey,
+            },
+            body: body
+        },
+        function (error, response, body) {
+            if (!error) {
+                if (response.statusCode > 400) {
+                    // http level problem - didn't connect through to mailchimp
+                    res.send({ status: 'failed', reason: 'bad status code: ' + response.statusCode });
+                } else {
+                    var mailchimpResponse = JSON.parse(body);
+                    // s'all goooood hombre
+                    res.send({ status: 'success', mailchimpResponse: mailchimpResponse });
+                }
+            } else {
+                res.send({ status: 'failed', reason: error });
+            }
+        }
+    );
 });
 
 // POST subscriptions/subscribe
