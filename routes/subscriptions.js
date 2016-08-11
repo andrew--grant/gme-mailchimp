@@ -32,7 +32,7 @@ router.post('/savethedateregister', function (req, res, next) {
         //}
     }
     out += ' ---';
-    res.send('company = ' + req.body.company);
+    res.send('out = ' + out);
 });
 
 // POST subscriptions/subscribe
