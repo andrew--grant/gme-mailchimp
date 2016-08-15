@@ -76,8 +76,11 @@ router.post('/savethedateregister', function (req, res, next) {
 
                             var body = JSON.stringify({
                                 'merge_fields': {
-                                    'MMERGE5': req.body.answer,
-                                    'MMERGE3': req.body.eventName
+                                    'FNAME': req.body.firstName,
+                                    'LNAME': req.body.lastName,
+                                    'MMERGE4': req.body.numberOfGuests || 1,
+                                    'MMERGE3': req.body.companyName,
+                                    'MMERGE5': req.body.eventAttending
                                 }
                             });
 
@@ -92,7 +95,7 @@ router.post('/savethedateregister', function (req, res, next) {
                                 }, function (error, response, body) {
                                     if (!error) {
                                         // s'all goooood hombre
-                                        res.send({ status: 'success' });
+                                        res.send({ status: 'success', info: 'updated' });
                                     } else {
                                         res.send({
                                             status: 'failed',
@@ -108,7 +111,7 @@ router.post('/savethedateregister', function (req, res, next) {
 
                     } else {
                         // s'all goooood hombre
-                        res.send({ status: 'success' });
+                        res.send({ status: 'success', info: 'added' });
                     }
 
 
