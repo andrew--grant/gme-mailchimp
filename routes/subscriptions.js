@@ -33,7 +33,7 @@ router.post('/savethedateregister', function (req, res, next) {
     // todo: SECURE THIS ON PRODUCTION!
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    var listId = '665cf0abc2'; //req.body.listId;
+    var listId = '14142a683f'; //req.body.listId;
     var body = JSON.stringify({
         'email_address': req.body.email.toLowerCase(),
         'status': 'subscribed',
