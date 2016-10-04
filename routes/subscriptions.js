@@ -161,7 +161,7 @@ router.post('/subscribe', function (req, res, next) {
             if (!error) {
                 if (response.statusCode > 400) {
                     // http level problem - didn't connect through to mailchimp
-                    res.send({status: 'failed', reason: 'bad status code: ' + response.statusCode + ' ' + mailchimpUrl + ' ' + req.body.email });
+                    res.send({status: 'failed', reason: 'bad status code: ' + response.statusCode});
                 } else {
 
                     var mailchimpResponse = JSON.parse(body);
@@ -207,7 +207,7 @@ router.post('/subscribe', function (req, res, next) {
 
                         } else {
                             // generic error
-                            res.send({status: 'failed', reason: 'mailchimp generic error: ' + response.statusCode});
+                            res.send({status: 'failed', reason: 'mailchimp generic error: ' + response.statusCode + ' ' + mailchimpUrl + ' ' + req.body.email});
                         }
 
                     } else {
