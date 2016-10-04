@@ -135,16 +135,6 @@ router.post('/subscribe', function (req, res, next) {
         'email_address': req.body.email.toLowerCase(),
         'merge_fields': {
             'MMERGE3': 'microsite'
-            // 'FNAME': req.body.firstName,
-            // 'LNAME': req.body.lastName,
-            // 'MMERGE4': req.body.mobile.replace(/\s/g, '').replace(/\-/g, ''),
-            // 'MMERGE3': req.body.eventName,
-            // 'MMERGE5': req.body.answer,
-            // 'MMERGE6': req.body.eventSource,
-            // 'MMERGE7': req.body.eventFacilitator,
-            // 'MMERGE8': req.body.state,
-            // 'MMERGE9': req.body.businessUnit,
-            // 'MMERGE10': req.body.isSubscribed
         }
     });
 
@@ -172,47 +162,47 @@ router.post('/subscribe', function (req, res, next) {
                         // data - just an 'existing member' message
 
                         // Does this member/email already exist in mailchimp?
-                        if (mailchimpResponse.status == 400 && mailchimpResponse.title == 'Member Exists') {
-                            // update the answer
-
-                            var md5 = require('blueimp-md5');
-                            var subscriberHash = md5(req.body.email.toLowerCase());
-
-                            var body = JSON.stringify({
-                                'merge_fields': {
-                                    'MMERGE5': req.body.answer,
-                                    'MMERGE3': req.body.eventName
-                                }
-                            });
-
-                            request(
-                                {
-                                    method: 'PATCH',
-                                    url: mailchimpUrl + '/3.0/lists/' + listId + '/members/' + subscriberHash,
-                                    headers: {
-                                        'Authorization': 'apikey ' + apiKey,
-                                    },
-                                    body: body
-                                }, function (error, response, body) {
-                                    if (!error) {
-                                        // s'all goooood hombre
-                                        res.send({status: 'success'});
-                                    } else {
-                                        res.send({
-                                            status: 'failed',
-                                            reason: 'error when trying to update existing email record'
-                                        });
-                                    }
-                                });
-
-                        } else {
-                            // generic error
-                            res.send({status: 'failed', reason: 'mailchimp generic error: ' + response.statusCode + ' ' + listId + ' ' + req.body.email});
-                        }
+                        // if (mailchimpResponse.status == 400 && mailchimpResponse.title == 'Member Exists') {
+                        //     // update the answer
+                        //
+                        //     var md5 = require('blueimp-md5');
+                        //     var subscriberHash = md5(req.body.email.toLowerCase());
+                        //
+                        //     var body = JSON.stringify({
+                        //         'merge_fields': {
+                        //             'MMERGE5': req.body.answer,
+                        //             'MMERGE3': req.body.eventName
+                        //         }
+                        //     });
+                        //
+                        //     // request(
+                        //     //     {
+                        //     //         method: 'PATCH',
+                        //     //         url: mailchimpUrl + '/3.0/lists/' + listId + '/members/' + subscriberHash,
+                        //     //         headers: {
+                        //     //             'Authorization': 'apikey ' + apiKey,
+                        //     //         },
+                        //     //         body: body
+                        //     //     }, function (error, response, body) {
+                        //     //         if (!error) {
+                        //     //             // s'all goooood hombre
+                        //     //             res.send({status: 'success'});
+                        //     //         } else {
+                        //     //             res.send({
+                        //     //                 status: 'failed',
+                        //     //                 reason: 'error when trying to update existing email record'
+                        //     //             });
+                        //     //         }
+                        //     //     });
+                        //
+                        // } else {
+                        //     // generic error
+                        //     res.send({status: 'failed', reason: 'mailchimp generic error: '});
+                        // }
 
                     } else {
                         // s'all goooood hombre
-                        res.send({status: 'success'});
+                        res.send({status: 'success', mailchimpresponse:mailchimpResponse});
                     }
                 }
             } else {
