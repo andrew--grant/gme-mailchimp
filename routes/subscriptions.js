@@ -207,7 +207,7 @@ router.post('/subscribe', function (req, res, next) {
 
                         } else {
                             // generic error
-                            res.send({status: 'failed', reason: 'mailchimp generic error: ' + response.statusCode + ' ' + mailchimpUrl + ' ' + req.body.email});
+                            res.send({status: 'failed', reason: 'mailchimp generic error: ' + response.statusCode + ' ' + listId + ' ' + req.body.email});
                         }
 
                     } else {
