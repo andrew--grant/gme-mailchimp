@@ -133,18 +133,18 @@ router.post('/subscribe', function (req, res, next) {
     var listId = req.body.listId;
     var body = JSON.stringify({
         'email_address': req.body.email.toLowerCase(),
-        'status': 'subscribed',
         'merge_fields': {
-            'FNAME': req.body.firstName,
-            'LNAME': req.body.lastName,
-            'MMERGE4': req.body.mobile.replace(/\s/g, '').replace(/\-/g, ''),
-            'MMERGE3': req.body.eventName,
-            'MMERGE5': req.body.answer,
-            'MMERGE6': req.body.eventSource,
-            'MMERGE7': req.body.eventFacilitator,
-            'MMERGE8': req.body.state,
-            'MMERGE9': req.body.businessUnit,
-            'MMERGE10': req.body.isSubscribed
+            'MMERGE3':'microsite'
+            // 'FNAME': req.body.firstName,
+            // 'LNAME': req.body.lastName,
+            // 'MMERGE4': req.body.mobile.replace(/\s/g, '').replace(/\-/g, ''),
+            // 'MMERGE3': req.body.eventName,
+            // 'MMERGE5': req.body.answer,
+            // 'MMERGE6': req.body.eventSource,
+            // 'MMERGE7': req.body.eventFacilitator,
+            // 'MMERGE8': req.body.state,
+            // 'MMERGE9': req.body.businessUnit,
+            // 'MMERGE10': req.body.isSubscribed
         }
     });
 
