@@ -133,6 +133,7 @@ router.post('/subscribe', function (req, res, next) {
     var listId = req.body.listId;
     var body = JSON.stringify({
         'email_address': req.body.email.toLowerCase(),
+        'status': 'subscribed',
         'merge_fields': {
             'MMERGE3': 'microsite'
         }
