@@ -157,52 +157,11 @@ router.post('/subscribe', function (req, res, next) {
                     var mailchimpResponse = JSON.parse(body);
 
                     if (mailchimpResponse.status >= 400) {
-
-                        // In these cases we do not get back the current member
-                        // data - just an 'existing member' message
-
-                        // Does this member/email already exist in mailchimp?
-                        // if (mailchimpResponse.status == 400 && mailchimpResponse.title == 'Member Exists') {
-                        //     // update the answer
-                        //
-                        //     var md5 = require('blueimp-md5');
-                        //     var subscriberHash = md5(req.body.email.toLowerCase());
-                        //
-                        //     var body = JSON.stringify({
-                        //         'merge_fields': {
-                        //             'MMERGE5': req.body.answer,
-                        //             'MMERGE3': req.body.eventName
-                        //         }
-                        //     });
-                        //
-                        //     // request(
-                        //     //     {
-                        //     //         method: 'PATCH',
-                        //     //         url: mailchimpUrl + '/3.0/lists/' + listId + '/members/' + subscriberHash,
-                        //     //         headers: {
-                        //     //             'Authorization': 'apikey ' + apiKey,
-                        //     //         },
-                        //     //         body: body
-                        //     //     }, function (error, response, body) {
-                        //     //         if (!error) {
-                        //     //             // s'all goooood hombre
-                        //     //             res.send({status: 'success'});
-                        //     //         } else {
-                        //     //             res.send({
-                        //     //                 status: 'failed',
-                        //     //                 reason: 'error when trying to update existing email record'
-                        //     //             });
-                        //     //         }
-                        //     //     });
-                        //
-                        // } else {
-                        //     // generic error
-                        //     res.send({status: 'failed', reason: 'mailchimp generic error: '});
-                        // }
+                        res.send({status: 'fail', mailchimpresponse: mailchimpResponse});
 
                     } else {
                         // s'all goooood hombre
-                        res.send({status: 'success', mailchimpresponse:mailchimpResponse});
+                        res.send({status: 'success', mailchimpresponse: mailchimpResponse});
                     }
                 }
             } else {
