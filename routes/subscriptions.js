@@ -10,7 +10,7 @@ var request = require('request');
 // GET subscriptions.
 router.get('/', function (req, res, next) {
 
-    res.json({ api_status: 'ok' });
+    res.json({api_status: 'ok'});
 
 });
 
@@ -21,7 +21,7 @@ router.get('/winner', function (req, res, next) {
 
 // POST subscriptions/xrconnectregister
 router.post('/xrconnectregister', function (req, res, next) {
-    res.send({ status: 'ok', message: 'nothing much going on here right now' });
+    res.send({status: 'ok', message: 'nothing much going on here right now'});
 
 });
 
@@ -59,7 +59,7 @@ router.post('/savethedateregister', function (req, res, next) {
             if (!error) {
                 if (response.statusCode > 400) {
                     // http level problem - didn't connect through to mailchimp
-                    res.send({ status: 'failed', reason: 'bad status code: ' + response.statusCode });
+                    res.send({status: 'failed', reason: 'bad status code: ' + response.statusCode});
                 } else {
                     var mailchimpResponse = JSON.parse(body);
                     if (mailchimpResponse.status >= 400) {
@@ -95,7 +95,7 @@ router.post('/savethedateregister', function (req, res, next) {
                                 }, function (error, response, body) {
                                     if (!error) {
                                         // s'all goooood hombre
-                                        res.send({ status: 'success', info: 'updated' });
+                                        res.send({status: 'success', info: 'updated'});
                                     } else {
                                         res.send({
                                             status: 'failed',
@@ -106,18 +106,18 @@ router.post('/savethedateregister', function (req, res, next) {
 
                         } else {
                             // generic error
-                            res.send({ status: 'failed', reason: 'mailchimp generic error: ' + response.statusCode });
+                            res.send({status: 'failed', reason: 'mailchimp generic error: ' + response.statusCode});
                         }
 
                     } else {
                         // s'all goooood hombre
-                        res.send({ status: 'success', info: 'added' });
+                        res.send({status: 'success', info: 'added'});
                     }
 
 
                 }
             } else {
-                res.send({ status: 'failed', reason: error });
+                res.send({status: 'failed', reason: error});
             }
         }
     );
@@ -134,14 +134,24 @@ router.post('/subscribe', function (req, res, next) {
     var body = JSON.stringify({
         'email_address': req.body.email.toLowerCase(),
         'merge_fields': {
-            'MMERGE3':'microsite'
+            'MMERGE3': 'microsite'
+            // 'FNAME': req.body.firstName,
+            // 'LNAME': req.body.lastName,
+            // 'MMERGE4': req.body.mobile.replace(/\s/g, '').replace(/\-/g, ''),
+            // 'MMERGE3': req.body.eventName,
+            // 'MMERGE5': req.body.answer,
+            // 'MMERGE6': req.body.eventSource,
+            // 'MMERGE7': req.body.eventFacilitator,
+            // 'MMERGE8': req.body.state,
+            // 'MMERGE9': req.body.businessUnit,
+            // 'MMERGE10': req.body.isSubscribed
         }
     });
 
     request(
         {
             method: 'POST',
-            url: mailchimpUrl + '/3.0/lists/05bed547f8/members/',
+            url: mailchimpUrl + '/3.0/lists/' + listId + '/members/',
             headers: {
                 'Authorization': 'apikey ' + apiKey,
             },
@@ -151,8 +161,9 @@ router.post('/subscribe', function (req, res, next) {
             if (!error) {
                 if (response.statusCode > 400) {
                     // http level problem - didn't connect through to mailchimp
-                    res.send({ status: 'failed', reason: 'bad status code: ' + response.statusCode });
+                    res.send({status: 'failed', reason: 'bad status code: ' + response.statusCode + ' ' + mailchimpUrl + ' ' + req.body.email });
                 } else {
+
                     var mailchimpResponse = JSON.parse(body);
 
                     if (mailchimpResponse.status >= 400) {
@@ -185,7 +196,7 @@ router.post('/subscribe', function (req, res, next) {
                                 }, function (error, response, body) {
                                     if (!error) {
                                         // s'all goooood hombre
-                                        res.send({ status: 'success' });
+                                        res.send({status: 'success'});
                                     } else {
                                         res.send({
                                             status: 'failed',
@@ -196,16 +207,16 @@ router.post('/subscribe', function (req, res, next) {
 
                         } else {
                             // generic error
-                            res.send({ status: 'failed', reason: 'mailchimp generic error: ' + response.statusCode });
+                            res.send({status: 'failed', reason: 'mailchimp generic error: ' + response.statusCode});
                         }
 
                     } else {
                         // s'all goooood hombre
-                        res.send({ status: 'success' });
+                        res.send({status: 'success'});
                     }
                 }
             } else {
-                res.send({ status: 'failed', reason: error });
+                res.send({status: 'failed', reason: error});
             }
         }
     );
