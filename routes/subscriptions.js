@@ -153,11 +153,9 @@ router.post('/subscribe', function (req, res, next) {
                     // http level problem - didn't connect through to mailchimp
                     res.send({status: 'failed', reason: 'bad status code: ' + response.statusCode});
                 } else {
-
                     var mailchimpResponse = JSON.parse(body);
-
                     if (mailchimpResponse.status >= 400) {
-                        res.send({status: 'fail', mailchimpresponse: mailchimpResponse});
+                        res.send({status: 'fail', mailchimpresponse: mailchimpResponse, body: body});
 
                     } else {
                         // s'all goooood hombre

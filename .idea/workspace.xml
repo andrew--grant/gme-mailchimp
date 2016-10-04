@@ -26,8 +26,8 @@
       <file leaf-file-name="subscriptions.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/subscriptions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="171" column="3" selection-start-line="171" selection-start-column="3" selection-end-line="171" selection-end-column="3" />
+            <state relative-caret-position="523">
+              <caret line="155" column="61" selection-start-line="155" selection-start-column="61" selection-end-line="155" selection-end-column="61" />
               <folding>
                 <element signature="e#375#414#0" expanded="false" />
                 <element signature="e#638#721#0" expanded="false" />
@@ -367,7 +367,7 @@
       <option name="project" value="LOCAL" />
       <updated>1469490644258</updated>
       <workItem from="1469490644361" duration="629000" />
-      <workItem from="1475540162535" duration="7173000" />
+      <workItem from="1475540162535" duration="7466000" />
     </task>
     <task id="LOCAL-00011" summary="deploy and test duplicate email logic -take 4">
       <created>1455249777548</created>
@@ -461,11 +461,18 @@
       <option name="project" value="LOCAL" />
       <updated>1475551675103</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="microsite subscription">
+      <created>1475553820543</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1475553820543</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21912000" />
+    <option name="totallyTimeSpent" value="22205000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -868,8 +875,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/subscriptions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="171" column="3" selection-start-line="171" selection-start-column="3" selection-end-line="171" selection-end-column="3" />
+        <state relative-caret-position="523">
+          <caret line="155" column="61" selection-start-line="155" selection-start-column="61" selection-end-line="155" selection-end-column="61" />
           <folding>
             <element signature="e#375#414#0" expanded="false" />
             <element signature="e#638#721#0" expanded="false" />
