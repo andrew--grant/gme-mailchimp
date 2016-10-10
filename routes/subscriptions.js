@@ -6,6 +6,8 @@ var apiKey = process.env['mailchimp-api-key'];
 //var listId = 'f37f9feb84';
 var mailchimp = new Mailchimp(apiKey);
 var request = require('request');
+var azure = require('azure-storage');
+var fs = require('fs');
 
 // GET subscriptions.
 router.get('/', function (req, res, next) {
@@ -21,6 +23,14 @@ router.get('/winner', function (req, res, next) {
 
 // POST subscriptions/xrconnectregister
 router.post('/xrconnectregister', function (req, res, next) {
+
+    fs.writeFile('message.txt', 'Just now, we have created this file', function (err) {
+
+        if (err) throw err;
+        console.log('It\'s saved! in same location.');
+
+    });
+
     res.send({status: 'ok', message: 'nothing much going on here right now'});
 
 });
