@@ -26,8 +26,12 @@ router.post('/xrconnectregister', function (req, res, next) {
 
     fs.writeFile('message.txt', 'Just now, we have created this file', function (err) {
 
-        if (err) throw err;
-        console.log('It\'s saved! in same location.');
+        if (err) {
+            res.send({status: 'fail', message: 'could not write text file'});
+        }
+        else{
+            res.send({status: 'ok', message: 'nothing much going on here right now'});
+        }
 
     });
 
