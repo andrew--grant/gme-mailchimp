@@ -24,7 +24,7 @@ router.get('/winner', function (req, res, next) {
 // POST subscriptions/xrconnectregister
 router.post('/xrconnectregister', function (req, res, next) {
 
-    fs.writeFile('message.txt', 'Just now, we have created this file', function (err) {
+    fs.writeFile('tempapplog.txt', 'Just now, we have created this file', function (err) {
 
         if (err) {
             res.send({status: 'fail', message: 'could not write text file'});
@@ -145,11 +145,13 @@ router.post('/subscribe', function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     var listId = req.body.listId;
+    var origin = 'microsite';
+    if(req.body.tempdata != null){origin = req.body.data}
     var body = JSON.stringify({
         'email_address': req.body.email.toLowerCase(),
         'status': 'subscribed',
         'merge_fields': {
-            'MMERGE3': 'microsite'
+            'MMERGE3': origin
         }
     });
 
