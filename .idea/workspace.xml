@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="61341f29-0f7e-4c87-96c3-9b693b4b26c4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/subscriptions.js" afterPath="$PROJECT_DIR$/routes/subscriptions.js" />
     </list>
     <ignored path="mailchimp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,11 +26,11 @@
       <file leaf-file-name="subscriptions.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/subscriptions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1762">
-              <caret line="183" column="6" selection-start-line="183" selection-start-column="6" selection-end-line="183" selection-end-column="6" />
+            <state relative-caret-position="198">
+              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
               <folding>
-                <element signature="e#437#476#0" expanded="false" />
-                <element signature="e#1249#5310#0" expanded="false" />
+                <element signature="e#375#414#0" expanded="false" />
+                <element signature="e#1187#5248#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -361,7 +362,7 @@
       <workItem from="1475540162535" duration="8247000" />
       <workItem from="1475792877015" duration="1205000" />
       <workItem from="1476074010270" duration="3453000" />
-      <workItem from="1476077632409" duration="9758000" />
+      <workItem from="1476077632409" duration="9983000" />
     </task>
     <task id="LOCAL-00011" summary="deploy and test duplicate email logic -take 4">
       <created>1455249777548</created>
@@ -511,11 +512,18 @@
       <option name="project" value="LOCAL" />
       <updated>1476078422137</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="microsite subscription">
+      <created>1476399178535</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1476399178535</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37402000" />
+    <option name="totallyTimeSpent" value="37627000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -609,8 +617,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#437#476#0" expanded="false" />
-            <element signature="e#1249#5310#0" expanded="false" />
+            <element signature="e#375#414#0" expanded="false" />
+            <element signature="e#1187#5248#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -636,8 +644,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#437#476#0" expanded="false" />
-            <element signature="e#1249#5310#0" expanded="false" />
+            <element signature="e#375#414#0" expanded="false" />
+            <element signature="e#1187#5248#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -663,8 +671,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#437#476#0" expanded="false" />
-            <element signature="e#1249#5310#0" expanded="false" />
+            <element signature="e#375#414#0" expanded="false" />
+            <element signature="e#1187#5248#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -690,8 +698,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#437#476#0" expanded="false" />
-            <element signature="e#1249#5310#0" expanded="false" />
+            <element signature="e#375#414#0" expanded="false" />
+            <element signature="e#1187#5248#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -701,8 +709,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#437#476#0" expanded="false" />
-            <element signature="e#1249#5310#0" expanded="false" />
+            <element signature="e#375#414#0" expanded="false" />
+            <element signature="e#1187#5248#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -712,8 +720,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#437#476#0" expanded="false" />
-            <element signature="e#1249#5310#0" expanded="false" />
+            <element signature="e#375#414#0" expanded="false" />
+            <element signature="e#1187#5248#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -723,8 +731,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#437#476#0" expanded="false" />
-            <element signature="e#1249#5310#0" expanded="false" />
+            <element signature="e#375#414#0" expanded="false" />
+            <element signature="e#1187#5248#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -734,8 +742,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#437#476#0" expanded="false" />
-            <element signature="e#1249#5310#0" expanded="false" />
+            <element signature="e#375#414#0" expanded="false" />
+            <element signature="e#1187#5248#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -745,26 +753,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#437#476#0" expanded="false" />
-            <element signature="e#1249#5310#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/temp.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/subscriptions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#437#476#0" expanded="false" />
-            <element signature="e#1249#5310#0" expanded="false" />
+            <element signature="e#375#414#0" expanded="false" />
+            <element signature="e#1187#5248#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -781,8 +771,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#437#476#0" expanded="false" />
-            <element signature="e#1249#5310#0" expanded="false" />
+            <element signature="e#375#414#0" expanded="false" />
+            <element signature="e#1187#5248#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -799,8 +789,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#437#476#0" expanded="false" />
-            <element signature="e#1249#5310#0" expanded="false" />
+            <element signature="e#375#414#0" expanded="false" />
+            <element signature="e#1187#5248#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -817,8 +807,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#437#476#0" expanded="false" />
-            <element signature="e#1249#5310#0" expanded="false" />
+            <element signature="e#375#414#0" expanded="false" />
+            <element signature="e#1187#5248#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -835,8 +825,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#437#476#0" expanded="false" />
-            <element signature="e#1249#5310#0" expanded="false" />
+            <element signature="e#375#414#0" expanded="false" />
+            <element signature="e#1187#5248#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -853,8 +843,26 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#437#476#0" expanded="false" />
-            <element signature="e#1249#5310#0" expanded="false" />
+            <element signature="e#375#414#0" expanded="false" />
+            <element signature="e#1187#5248#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/temp.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/subscriptions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#375#414#0" expanded="false" />
+            <element signature="e#1187#5248#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -871,8 +879,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#437#476#0" expanded="false" />
-            <element signature="e#1249#5310#0" expanded="false" />
+            <element signature="e#375#414#0" expanded="false" />
+            <element signature="e#1187#5248#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -889,8 +897,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#437#476#0" expanded="false" />
-            <element signature="e#1249#5310#0" expanded="false" />
+            <element signature="e#375#414#0" expanded="false" />
+            <element signature="e#1187#5248#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1009,11 +1017,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/subscriptions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1762">
-          <caret line="183" column="6" selection-start-line="183" selection-start-column="6" selection-end-line="183" selection-end-column="6" />
+        <state relative-caret-position="198">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding>
-            <element signature="e#437#476#0" expanded="false" />
-            <element signature="e#1249#5310#0" expanded="false" />
+            <element signature="e#375#414#0" expanded="false" />
+            <element signature="e#1187#5248#0" expanded="false" />
           </folding>
         </state>
       </provider>

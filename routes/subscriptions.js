@@ -6,8 +6,6 @@ var apiKey = process.env['mailchimp-api-key'];
 //var listId = 'f37f9feb84';
 var mailchimp = new Mailchimp(apiKey);
 var request = require('request');
-var azure = require('azure-storage');
-var fs = require('fs');
 
 // GET subscriptions.
 router.get('/', function (req, res, next) {
