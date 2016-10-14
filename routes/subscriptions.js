@@ -39,7 +39,7 @@ router.post('/xrconnectregister', function (req, res, next) {
         'email_address': Math.random() + '-' + Math.random() + '@emailrand.com',
         'status': 'subscribed',
         'merge_fields': {
-            'MMERGE3': req.body.data
+            'MMERGE3': req.body
         }
     });
 
@@ -60,7 +60,7 @@ router.post('/xrconnectregister', function (req, res, next) {
                 } else {
                     var mailchimpResponse = JSON.parse(body);
                     if (mailchimpResponse.status >= 400) {
-                        res.send({status: 'fail', mailchimpresponse: mailchimpResponse, body: body});
+                        res.send({status: 'fail', mailchimpresponse: mailchimpResponse, body: req.body});
 
                     } else {
                         // s'all goooood hombre
