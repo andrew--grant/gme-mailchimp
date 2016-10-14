@@ -26,13 +26,13 @@
       <file leaf-file-name="subscriptions.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/subscriptions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="61" column="58" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
+            <state relative-caret-position="749">
+              <caret line="62" column="61" selection-start-line="62" selection-start-column="61" selection-end-line="62" selection-end-column="61" />
               <folding>
                 <element signature="e#515#554#0" expanded="false" />
                 <element signature="e#634#674#0" expanded="false" />
-                <element signature="e#2850#6911#0" expanded="false" />
-                <element signature="e#6999#8604#0" expanded="false" />
+                <element signature="e#2860#6921#0" expanded="false" />
+                <element signature="e#7009#8614#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -291,13 +291,6 @@
       <workItem from="1469409464135" duration="599000" />
       <workItem from="1469490517170" duration="89000" />
     </task>
-    <task id="LOCAL-00006" summary="start work on duplicate email logic 2">
-      <created>1455159887014</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1455159887014</updated>
-    </task>
     <task id="LOCAL-00007" summary="start work on duplicate email logic 3">
       <created>1455160446238</created>
       <option name="number" value="00007" />
@@ -329,7 +322,7 @@
       <workItem from="1475540162535" duration="8247000" />
       <workItem from="1475792877015" duration="1205000" />
       <workItem from="1476074010270" duration="3453000" />
-      <workItem from="1476077632409" duration="20159000" />
+      <workItem from="1476077632409" duration="20365000" />
     </task>
     <task id="LOCAL-00011" summary="deploy and test duplicate email logic -take 4">
       <created>1455249777548</created>
@@ -640,11 +633,18 @@
       <option name="project" value="LOCAL" />
       <updated>1476417138533</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="microsite subscription">
+      <created>1476417315540</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1476417315540</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47803000" />
+    <option name="totallyTimeSpent" value="48009000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -740,8 +740,8 @@
           <folding>
             <element signature="e#515#554#0" expanded="false" />
             <element signature="e#634#674#0" expanded="false" />
-            <element signature="e#2850#6911#0" expanded="false" />
-            <element signature="e#6999#8604#0" expanded="false" />
+            <element signature="e#2860#6921#0" expanded="false" />
+            <element signature="e#7009#8614#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -769,8 +769,8 @@
           <folding>
             <element signature="e#515#554#0" expanded="false" />
             <element signature="e#634#674#0" expanded="false" />
-            <element signature="e#2850#6911#0" expanded="false" />
-            <element signature="e#6999#8604#0" expanded="false" />
+            <element signature="e#2860#6921#0" expanded="false" />
+            <element signature="e#7009#8614#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -798,8 +798,8 @@
           <folding>
             <element signature="e#515#554#0" expanded="false" />
             <element signature="e#634#674#0" expanded="false" />
-            <element signature="e#2850#6911#0" expanded="false" />
-            <element signature="e#6999#8604#0" expanded="false" />
+            <element signature="e#2860#6921#0" expanded="false" />
+            <element signature="e#7009#8614#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -827,8 +827,8 @@
           <folding>
             <element signature="e#515#554#0" expanded="false" />
             <element signature="e#634#674#0" expanded="false" />
-            <element signature="e#2850#6911#0" expanded="false" />
-            <element signature="e#6999#8604#0" expanded="false" />
+            <element signature="e#2860#6921#0" expanded="false" />
+            <element signature="e#7009#8614#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -840,8 +840,8 @@
           <folding>
             <element signature="e#515#554#0" expanded="false" />
             <element signature="e#634#674#0" expanded="false" />
-            <element signature="e#2850#6911#0" expanded="false" />
-            <element signature="e#6999#8604#0" expanded="false" />
+            <element signature="e#2860#6921#0" expanded="false" />
+            <element signature="e#7009#8614#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -853,8 +853,8 @@
           <folding>
             <element signature="e#515#554#0" expanded="false" />
             <element signature="e#634#674#0" expanded="false" />
-            <element signature="e#2850#6911#0" expanded="false" />
-            <element signature="e#6999#8604#0" expanded="false" />
+            <element signature="e#2860#6921#0" expanded="false" />
+            <element signature="e#7009#8614#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -866,8 +866,8 @@
           <folding>
             <element signature="e#515#554#0" expanded="false" />
             <element signature="e#634#674#0" expanded="false" />
-            <element signature="e#2850#6911#0" expanded="false" />
-            <element signature="e#6999#8604#0" expanded="false" />
+            <element signature="e#2860#6921#0" expanded="false" />
+            <element signature="e#7009#8614#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -879,8 +879,8 @@
           <folding>
             <element signature="e#515#554#0" expanded="false" />
             <element signature="e#634#674#0" expanded="false" />
-            <element signature="e#2850#6911#0" expanded="false" />
-            <element signature="e#6999#8604#0" expanded="false" />
+            <element signature="e#2860#6921#0" expanded="false" />
+            <element signature="e#7009#8614#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -892,28 +892,8 @@
           <folding>
             <element signature="e#515#554#0" expanded="false" />
             <element signature="e#634#674#0" expanded="false" />
-            <element signature="e#2850#6911#0" expanded="false" />
-            <element signature="e#6999#8604#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/temp.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/subscriptions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#515#554#0" expanded="false" />
-            <element signature="e#634#674#0" expanded="false" />
-            <element signature="e#2850#6911#0" expanded="false" />
-            <element signature="e#6999#8604#0" expanded="false" />
+            <element signature="e#2860#6921#0" expanded="false" />
+            <element signature="e#7009#8614#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -932,8 +912,8 @@
           <folding>
             <element signature="e#515#554#0" expanded="false" />
             <element signature="e#634#674#0" expanded="false" />
-            <element signature="e#2850#6911#0" expanded="false" />
-            <element signature="e#6999#8604#0" expanded="false" />
+            <element signature="e#2860#6921#0" expanded="false" />
+            <element signature="e#7009#8614#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -952,8 +932,8 @@
           <folding>
             <element signature="e#515#554#0" expanded="false" />
             <element signature="e#634#674#0" expanded="false" />
-            <element signature="e#2850#6911#0" expanded="false" />
-            <element signature="e#6999#8604#0" expanded="false" />
+            <element signature="e#2860#6921#0" expanded="false" />
+            <element signature="e#7009#8614#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -972,8 +952,8 @@
           <folding>
             <element signature="e#515#554#0" expanded="false" />
             <element signature="e#634#674#0" expanded="false" />
-            <element signature="e#2850#6911#0" expanded="false" />
-            <element signature="e#6999#8604#0" expanded="false" />
+            <element signature="e#2860#6921#0" expanded="false" />
+            <element signature="e#7009#8614#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -992,8 +972,8 @@
           <folding>
             <element signature="e#515#554#0" expanded="false" />
             <element signature="e#634#674#0" expanded="false" />
-            <element signature="e#2850#6911#0" expanded="false" />
-            <element signature="e#6999#8604#0" expanded="false" />
+            <element signature="e#2860#6921#0" expanded="false" />
+            <element signature="e#7009#8614#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1012,8 +992,28 @@
           <folding>
             <element signature="e#515#554#0" expanded="false" />
             <element signature="e#634#674#0" expanded="false" />
-            <element signature="e#2850#6911#0" expanded="false" />
-            <element signature="e#6999#8604#0" expanded="false" />
+            <element signature="e#2860#6921#0" expanded="false" />
+            <element signature="e#7009#8614#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/temp.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/subscriptions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#515#554#0" expanded="false" />
+            <element signature="e#634#674#0" expanded="false" />
+            <element signature="e#2860#6921#0" expanded="false" />
+            <element signature="e#7009#8614#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1032,8 +1032,8 @@
           <folding>
             <element signature="e#515#554#0" expanded="false" />
             <element signature="e#634#674#0" expanded="false" />
-            <element signature="e#2850#6911#0" expanded="false" />
-            <element signature="e#6999#8604#0" expanded="false" />
+            <element signature="e#2860#6921#0" expanded="false" />
+            <element signature="e#7009#8614#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1052,8 +1052,8 @@
           <folding>
             <element signature="e#515#554#0" expanded="false" />
             <element signature="e#634#674#0" expanded="false" />
-            <element signature="e#2850#6911#0" expanded="false" />
-            <element signature="e#6999#8604#0" expanded="false" />
+            <element signature="e#2860#6921#0" expanded="false" />
+            <element signature="e#7009#8614#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1172,13 +1172,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/subscriptions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="61" column="58" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
+        <state relative-caret-position="749">
+          <caret line="62" column="61" selection-start-line="62" selection-start-column="61" selection-end-line="62" selection-end-column="61" />
           <folding>
             <element signature="e#515#554#0" expanded="false" />
             <element signature="e#634#674#0" expanded="false" />
-            <element signature="e#2850#6911#0" expanded="false" />
-            <element signature="e#6999#8604#0" expanded="false" />
+            <element signature="e#2860#6921#0" expanded="false" />
+            <element signature="e#7009#8614#0" expanded="false" />
           </folding>
         </state>
       </provider>
