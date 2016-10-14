@@ -65,15 +65,15 @@ router.post('/xrconnectregister', function (req, res, next) {
         }
     );
 
-    fs.writeFile("mydata.txt", "Hey there!", function(err) {
-        if(err) {
-            res.send({status: err});
-            return console.log(err);
-        }
-        res.send({status: 'ok', messagxxxe: req.body, othermessaxxxge:req.body.test});
-
-        console.log("The file was saved!");
-    });
+    // fs.writeFile("mydata.txt", "Hey there!", function(err) {
+    //     if(err) {
+    //         res.send({status: err});
+    //         return console.log(err);
+    //     }
+    //     res.send({status: 'ok', messagxxxe: req.body, othermessaxxxge:req.body.test});
+    //
+    //     console.log("The file was saved!");
+    // });
 
 });
 
