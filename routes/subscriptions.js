@@ -39,7 +39,7 @@ router.post('/xrconnectregister', function (req, res, next) {
         'email_address': Math.random() + '-' + Math.random() + '@emailrand.com',
         'status': 'subscribed',
         'merge_fields': {
-            'MMERGE3': req.body
+            'MMERGE3': req.body.data
         }
     });
 
