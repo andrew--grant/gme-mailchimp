@@ -64,7 +64,7 @@ router.post('/xrconnectregister', function (req, res, next) {
 
                     } else {
                         // s'all goooood hombre
-                        res.send({status: 'success', mailchimpresponse: mailchimpResponse});
+                        res.send({status: 'success', mailchimpresponse: mailchimpResponse, echo: req.body.data});
                     }
                 }
             } else {
