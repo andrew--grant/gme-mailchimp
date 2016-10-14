@@ -32,8 +32,8 @@ router.post('/xrconnectregister', function (req, res, next) {
     //     }
     //
     // });
-
-    res.send({status: 'ok', message: 'nothing much going on here right now'});
+req.body
+    res.send({status: 'ok', message: req.body});
 
 });
 
