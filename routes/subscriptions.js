@@ -33,7 +33,7 @@ router.post('/xrconnectregister', function (req, res, next) {
     //
     // });
 req.body
-    res.send({status: 'ok', message: req.body});
+    res.send({status: 'ok', message: req.body, othermessage:req.body.test});
 
 });
 
