@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="61341f29-0f7e-4c87-96c3-9b693b4b26c4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/subscriptions.js" afterPath="$PROJECT_DIR$/routes/subscriptions.js" />
     </list>
     <ignored path="mailchimp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,8 +25,8 @@
       <file leaf-file-name="subscriptions.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/subscriptions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="770">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="792">
+              <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
               <folding>
                 <element signature="e#375#414#0" expanded="false" />
                 <element signature="e#1165#5226#0" expanded="false" />
@@ -362,7 +361,7 @@
       <workItem from="1475540162535" duration="8247000" />
       <workItem from="1475792877015" duration="1205000" />
       <workItem from="1476074010270" duration="3453000" />
-      <workItem from="1476077632409" duration="11294000" />
+      <workItem from="1476077632409" duration="11799000" />
     </task>
     <task id="LOCAL-00011" summary="deploy and test duplicate email logic -take 4">
       <created>1455249777548</created>
@@ -526,11 +525,18 @@
       <option name="project" value="LOCAL" />
       <updated>1476399406406</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="microsite subscription">
+      <created>1476404810225</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1476404810225</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38938000" />
+    <option name="totallyTimeSpent" value="39443000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1024,8 +1030,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/subscriptions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state relative-caret-position="792">
+          <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
           <folding>
             <element signature="e#375#414#0" expanded="false" />
             <element signature="e#1165#5226#0" expanded="false" />
