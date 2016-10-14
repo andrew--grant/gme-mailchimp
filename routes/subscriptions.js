@@ -22,16 +22,48 @@ router.get('/winner', function (req, res, next) {
 // POST subscriptions/xrconnectregister
 router.post('/xrconnectregister', function (req, res, next) {
 
-    // fs.writeFile('tempapplog.txt', 'Just now, we have created this file', function (err) {
-    //
-    //     if (err) {
-    //         res.send({status: 'fail', message: 'could not write text file'});
-    //     }
-    //     else{
-    //         res.send({status: 'ok', message: 'nothing much going on here right now'});
-    //     }
-    //
-    // });
+    // CORS Headers (client > gme app, not gme >  mailchimp)
+    // todo: SECURE THIS ON PRODUCTION!
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    var listId = req.body.listId;
+    var body = JSON.stringify({
+        'email_address': req.body.email.toLowerCase(),
+        'status': 'subscribed',
+        'merge_fields': {
+            'MMERGE3': req.body.test
+        }
+    });
+
+    request(
+        {
+            method: 'POST',
+            url: mailchimpUrl + '/3.0/lists/' + listId + '/members/',
+            headers: {
+                'Authorization': 'apikey ' + apiKey,
+            },
+            body: body
+        },
+        function (error, response, body) {
+            if (!error) {
+                if (response.statusCode > 400) {
+                    // http level problem - didn't connect through to mailchimp
+                    res.send({status: 'failed', reason: 'bad status code: ' + response.statusCode});
+                } else {
+                    var mailchimpResponse = JSON.parse(body);
+                    if (mailchimpResponse.status >= 400) {
+                        res.send({status: 'fail', mailchimpresponse: mailchimpResponse, body: body});
+
+                    } else {
+                        // s'all goooood hombre
+                        res.send({status: 'success', mailchimpresponse: mailchimpResponse});
+                    }
+                }
+            } else {
+                res.send({status: 'failed', reason: error});
+            }
+        }
+    );
 
     fs.writeFile("mydata.txt", "Hey there!", function(err) {
         if(err) {
@@ -44,7 +76,6 @@ router.post('/xrconnectregister', function (req, res, next) {
     });
 
 });
-
 
 // POST subscriptions/savethedateregister
 router.post('/savethedateregister', function (req, res, next) {
@@ -191,5 +222,3 @@ router.post('/subscribe', function (req, res, next) {
 });
 
 module.exports = router;
-
-
