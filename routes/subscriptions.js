@@ -33,7 +33,16 @@ router.post('/xrconnectregister', function (req, res, next) {
     //
     // });
 
-    res.send({status: 'ok', message: req.body, othermessage:req.body.test});
+    fs.writeFile("/mydata", "Hey there!", function(err) {
+        if(err) {
+            res.send({status: 'unok'});
+            return console.log(err);
+        }
+        res.send({status: 'ok', messagxxxe: req.body, othermessaxxxge:req.body.test});
+
+        console.log("The file was saved!");
+    });
+
 
 });
 
