@@ -28,7 +28,7 @@ router.post('/xrconnectregister', function (req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     var listId = req.body.listId;
     var body = JSON.stringify({
-        'email_address': 'agagaag@blah.com',
+        'email_address': Math.random() + '-' + Math.random() + '@emailrand',
         'status': 'subscribed',
         'merge_fields': {
             'MMERGE3': req.body.test
