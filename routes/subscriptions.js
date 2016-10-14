@@ -6,6 +6,14 @@ var apiKey = process.env['mailchimp-api-key'];
 //var listId = 'f37f9feb84';
 var mailchimp = new Mailchimp(apiKey);
 var request = require('request');
+
+var bodyParser = require('body-parser')
+
+var app = express()
+// parse application/json
+app.use(bodyParser.json())
+
+
 var fs = require('fs');
 // GET subscriptions.
 router.get('/', function (req, res, next) {
@@ -31,7 +39,7 @@ router.post('/xrconnectregister', function (req, res, next) {
         'email_address': Math.random() + '-' + Math.random() + '@emailrand.com',
         'status': 'subscribed',
         'merge_fields': {
-            'MMERGE3': req.body.json
+            'MMERGE3': req.body
         }
     });
 
