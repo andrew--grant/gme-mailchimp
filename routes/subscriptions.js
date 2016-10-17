@@ -84,27 +84,24 @@ router.post('/xrconnectregister', function (req, res, next) {
         password: sqlPwd,
         server: 'kecenudals.database.windows.net',
         database: 'GMEWeb_Aux_Staging',
-
         options: {
-            encrypt: true // Use this if you're on Windows Azure
+            encrypt: true // required by Azure
         }
     }
 
     sql.connect(config).then(function () {
         // Query
         new sql.Request()
-            .query("insert into GMELocationLog (LogDateTime, LogStatus) values ('" + new Date().toISOString() + "','xrs app registration!!!!:')").then(function (recordset) {
+            .query("insert into GMELocationLog (LogDateTime, LogStatus) values ('" + new Date().toISOString() + "','xrs app registration data:'" + req.body.data + ")").then(function (recordset) {
             console.log('good news');
             console.log(recordset);
         }).catch(function (err) {
-            console.log('bad news 1');
+            console.log('sql level error');
             console.log(err);
         });
-
     }).catch(function (err) {
-        console.log('bad news 2');
+        console.log('connect level error');
     });
-
 
 });
 
