@@ -92,7 +92,7 @@ router.post('/xrconnectregister', function (req, res, next) {
     sql.connect(config).then(function () {
         // Query
         new sql.Request()
-            .query("insert into GMELocationLog (LogDateTime, LogStatus) values ('" + new Date().toISOString() + "','" + "hello" + "')").then(function (recordset) {
+            .query("insert into GMELocationLog (LogDateTime, LogStatus) values ('" + new Date().toISOString() + "','" + body + "')").then(function (recordset) {
             console.log('good news');
             console.log(recordset);
         }).catch(function (err) {
