@@ -83,7 +83,7 @@ router.post('/xrconnectregister', function (req, res, next) {
         user: 'DB_Admin',
         password: sqlPwd,
         server: 'kecenudals.database.windows.net',
-        database: 'GMEWeb_Aux_Staging',
+        database: 'GMEWeb_Aux',
         options: {
             encrypt: true // required by Azure
         }
