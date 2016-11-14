@@ -35,7 +35,8 @@ router.post('/xrconnectregister', function (req, res, next) {
     // todo: SECURE THIS ON PRODUCTION!
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    var listId = '05bed547f8';
+    // var listId = '05bed547f8';
+    var listId = 'a6f1694bb5';
     var body = JSON.stringify({
         'email_address': Math.random() + '-' + Math.random() + '@emailrand.com',
         'status': 'subscribed',
