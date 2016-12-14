@@ -25,7 +25,7 @@ router.get('/', function (req, res, next) {
 
 
 
-// POST subscriptions/subscribe
+// POST subscriptions/compsubscribe
 router.post('/compsubscribe', function (req, res, next) {
 
     // CORS Headers (client > gme app, not gme >  mailchimp)
@@ -45,8 +45,8 @@ router.post('/compsubscribe', function (req, res, next) {
             'MMERGE6': req.body.eventSource,
             'MMERGE7': req.body.eventFacilitator,
             'MMERGE8': req.body.state,
-            'MMERGE9': req.body.businessUnit,
-            'MMERGE10': req.body.isSubscribed
+            'MMERGE9': req.body.businessUnit
+            //'MMERGE10': req.body.isSubscribed
         }
     });
 
