@@ -29,7 +29,6 @@ router.get('/', function (req, res, next) {
 router.post('/compsubscribe', function (req, res, next) {
 
     // CORS Headers (client > gme app, not gme >  mailchimp)
-    // todo: SECURE THIS ON PRODUCTION!
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     var listId = req.body.listId;
@@ -122,18 +121,6 @@ router.post('/compsubscribe', function (req, res, next) {
         }
     );
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
