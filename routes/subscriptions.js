@@ -186,7 +186,7 @@ router.post('/xrconnectregister', function (req, res, next) {
                                 // update the answer
 
                                 var md5 = require('blueimp-md5');
-                                var subscriberHash = md5(req.body.email.toLowerCase());
+                                var subscriberHash = md5(bodyIncomingParsed.Email.toLowerCase());
 
                                 var bodyUpdate = JSON.stringify({
                                     'merge_fields': theMergedFields
