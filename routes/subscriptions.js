@@ -142,11 +142,13 @@ router.post('/xrconnectregister', function (req, res, next) {
         var theMergedFields = {
             'FNAME': bodyIncomingParsed.FirstName || '',
             'LNAME': bodyIncomingParsed.LastName || '',
-            'MMERGE3': bodyIncomingParsed.Mobile || '',
-            'MMERGE4': bodyIncomingParsed.Postcode || '',
+            'MMERGE8': bodyIncomingParsed.Mobile || '',
+            'MMERGE9': bodyIncomingParsed.Postcode || '',
             'MMERGE5': bodyIncomingParsed.Marketing || '',
-            'MMERGE6': bodyIncomingParsed.SerialNumber || '',
+            'MMERGE10': bodyIncomingParsed.SerialNumber || '',
             'MMERGE7': bodyIncomingParsed.RadioModel || '',
+            'MMERGE3': bodyIncomingParsed.ReadPolicy || ''
+
 
         }
 
