@@ -190,7 +190,7 @@ router.post('/xrconnectregister', function (req, res, next) {
                                 request(
                                     {
                                         method: 'PATCH',
-                                        url: mailchimpUrl + '/3.0/lists/' + listId + '/members/' + subscriberHash,
+                                        url: mailchimpUrl + '/3.0/lists/daf92284c5/members/' + subscriberHash,
                                         headers: {
                                             'Authorization': 'apikey ' + apiKey,
                                         },
