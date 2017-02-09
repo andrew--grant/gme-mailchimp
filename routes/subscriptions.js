@@ -136,18 +136,24 @@ router.post('/xrconnectregister', function (req, res, next) {
 
     try {
 
-        // MMERGE6 == serial number
-        // MMERGE7 == radio model
 
         var bodyIncomingParsed = JSON.parse(req.body.data);
 
+        var theMergedFields = {
+            'FNAME': bodyIncomingParsed.FirstName || '',
+            'LNAME': bodyIncomingParsed.LastName || '',
+            'MMERGE3': bodyIncomingParsed.Mobile || '',
+            'MMERGE4': bodyIncomingParsed.Postcode || '',
+            'MMERGE5': bodyIncomingParsed.Marketing || '',
+            'MMERGE6': bodyIncomingParsed.SerialNumber || '',
+            'MMERGE7': bodyIncomingParsed.RadioModel || '',
+
+        }
+
         var body = JSON.stringify({
-            'email_address': Math.random() + '-' + Math.random() + '@emailrand.com',
+            'email_address': bodyIncomingParsed.Email,
             'status': 'subscribed',
-            'merge_fields': {
-                'MMERGE6': bodyIncomingParsed.SerialNumber,
-                'MMERGE7': bodyIncomingParsed.RadioModel
-            }
+            'merge_fields': theMergedFields
         });
 
         request(
@@ -181,10 +187,7 @@ router.post('/xrconnectregister', function (req, res, next) {
                                 var subscriberHash = md5(req.body.email.toLowerCase());
 
                                 var bodyUpdate = JSON.stringify({
-                                    'merge_fields': {
-                                        'MMERGE6': bodyIncomingParsed.SerialNumber,
-                                        'MMERGE7': bodyIncomingParsed.RadioModel
-                                    }
+                                    'merge_fields': theMergedFields
                                 });
 
                                 request(
